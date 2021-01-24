@@ -19,9 +19,13 @@ jobs:
     - name: Install Dependences
       run: npm install
 
+    - name: Build
+      run: npm run build
+
     - name: Deploy To Github Page
-      run: npm run deploy
-      env:
-        GITHUB_ACTOR: jihainan
-        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      uses: peaceiris/actions-gh-pages@v3
+      with: 
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: master
+        publish_dir: ./build
       
