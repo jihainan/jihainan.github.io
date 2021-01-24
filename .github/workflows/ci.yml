@@ -21,4 +21,7 @@ jobs:
 
     - name: Deploy To Github Page
       run: npm run deploy
+      env:
+        GITHUB_ACTOR: jihainan
+        GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
       
